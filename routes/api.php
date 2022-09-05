@@ -19,3 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/first', \App\Http\Controllers\GetFirstController::class);
+
+Route::controller(\App\Http\Controllers\CompanyController::class)->group(function() {
+    Route::get('/company/mock', 'getMockCompany');
+});
